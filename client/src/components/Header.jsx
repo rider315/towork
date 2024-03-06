@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Header() {
   return (
+    <div className="mainhead">
+
     <header>
         <h1>
 
@@ -12,5 +14,6 @@ export default function Header() {
         
         
         </header>
+    </div>
   )
 }

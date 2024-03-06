@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 // import { deleteTodo, getAllTodos } from '../redux/actions/index';
-import { getAllTodos,deleteTodo } from '../redux/actions/index';
+import { getAllTodos, deleteTodo } from '../redux/actions/index';
 import { ALL_TODOS, DONE_TODOS, ACTIVE_TODOS } from '../redux/actions/type';
 
 // import { useDispatch} from 'react-redux';
@@ -32,7 +32,7 @@ export const Todos = () => {
             return todos.filter(todo => !todo.done)
         } else if (currentTab === DONE_TODOS) {
             return todos.filter(todo => todo.done)
-        } 
+        }
     }
 
     const removeDoneTodos = () => {
@@ -47,34 +47,30 @@ export const Todos = () => {
 
         // <div>Hello</div>
         <article>
-            <div>
-                <Tabs currentTab={currentTab}/>
+            <div className='tabscenter'>
+                <Tabs currentTab={currentTab} />
                 {
                     todos.some(todo => todo.done) ? (
                         <button
                             onClick={removeDoneTodos}
                             className="button clear"
                         >Remove Done Todos</button>
-                    ) : null    
+                    ) : null
                 }
 
 
             </div>
 
-            <ul>
+            <ul className="todo-list">
                 {
                     getTodos().map(todo => (
-                        <Todo
-                        key={todo._id}
-                        
-                        todo={todo}
-                        
-                        />
-                            
-                        
+                        <li className="todo-item" key={todo._id}>
+                            <Todo todo={todo} />
+                        </li>
                     ))
                 }
             </ul>
+
         </article>
     )
 }

@@ -20,13 +20,15 @@ export default function TodoForm() {
         setText(e.target.value);
     }
   return (
-    <form className="form" onSubmit={onFormSubmit}>
-            <input  
-                placeholder="Enter Your Kaam."
-                className="input"
-                onChange={onInputChange}
-                value={text}
-            />
-        </form>
+    <div class="form-container">
+  <form class="form" onSubmit={onFormSubmit}>
+    <input  
+        placeholder="Enter Your Kaam."
+        class="input"
+        onChange={onInputChange}
+        value={text}
+    />
+  </form>
+</div>
   )
 }
